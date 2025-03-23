@@ -1,0 +1,66 @@
+# Ignore Maven target directory
+/target/
+
+# Ignore IntelliJ IDEA-specific files
+/.idea/
+/*.iml
+
+# Ignore Eclipse/VS Code workspace files
+/.classpath
+/.project
+/.settings/
+/.vscode/
+
+# Ignore build artifacts
+/mvnw
+/mvnw.cmd
+
+# Ignore OS-specific files
+*.DS_Store
+*.log
+*.swp
+*.swo
+*.swn
+Thumbs.db
+
+# Ignore compiled classes
+**/bin/
+**/out/
+**/build/
+
+# Ignore dependency caches
+/.m2/
+/.gradle/
+/node_modules/
+
+# Ignore logs and temp files
+/logs/
+/*.log
+*.tmp
+*.bak
+
+# Ignore environment and credentials files
+/HELP.md
+/src/main/resources/application.properties
+/src/main/resources/application.yml
+/src/main/resources/application-*.yml
+/src/main/resources/application-*.properties
+
+# Ignore test coverage reports
+/coverage/
+/jacoco/
+/*.exec
+
+# Ignore generated documentation
+/target/site/
+
+# Ignore database files (if applicable)
+*.h2.db
+*.mv.db
+*.sqlite
+
+# Ignore Lombok config (optional)
+.lombok.config
+
+# Ignore sensitive user-specific files
+.env

@@ -1,0 +1,1 @@
+│── config/          # Configuration-related files (Beans, Security, etc.)
