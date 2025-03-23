@@ -38,7 +38,7 @@ public class AppConfig {
 
     @Bean
     public String jwtSecret() {
-        return dotenv.get("JWT_SECRET", Objects.requireNonNull(env.getProperty("JWT_SECRET")));
+        return dotenv.get("JWT_SECRET", env.getProperty("JWT_SECRET", "default_secret_key"));
     }
 
     @Bean
