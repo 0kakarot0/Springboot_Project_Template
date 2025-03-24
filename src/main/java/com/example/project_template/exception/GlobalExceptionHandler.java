@@ -1,7 +1,7 @@
 package com.example.project_template.exception;
 
 
-import com.example.project_template.utils.error_messages.ErrorMessage;
+import com.example.project_template.utils.response_messages.error_messages.ErrorMessage;
 import com.example.project_template.utils.generic_response.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

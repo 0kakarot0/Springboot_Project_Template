@@ -3,7 +3,6 @@ package com.example.project_template.config;
 import com.example.project_template.security.JwtFilter;
 import com.example.project_template.utils.role.Role;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -23,19 +22,21 @@ public class SecurityConfig {
 
 
     @Bean
-    private SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         request ->
                                 request.requestMatchers(
-                                                "/api/v1/user/login",
-                                                "/api/v1/user/register",
+                                                "/api/v1/student/login",
+                                                "/api/v1/student/register",
                                                 "/api/v1/admin/login",
                                                 "/api/v1/manager/login"
                                         ).permitAll()
-                                        .requestMatchers("/api/v1/user/**").hasAuthority(Role.USER.name()).anyRequest().authenticated()
-                                        .requestMatchers("/api/v1/admin/**").hasAuthority(Role.ADMIN.name()).anyRequest().authenticated()
-                                        .requestMatchers("/api/v1/manager/**").hasAuthority(Role.MANAGER.name()).anyRequest().authenticated()
+                                        .requestMatchers("/api/v1/student/**").hasAuthority(Role.STUDENT.name())
+                                        .requestMatchers("/api/v1/admin/**").hasAuthority(Role.ADMIN.name())
+                                        .requestMatchers("/api/v1/manager/**").hasAuthority(Role.MANAGER.name())
+                                        .anyRequest().authenticated()
                 )
                 .sessionManagement(
                         session ->

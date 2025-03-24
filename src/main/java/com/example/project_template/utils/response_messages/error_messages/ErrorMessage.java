@@ -1,4 +1,4 @@
-package com.example.project_template.utils.error_messages;
+package com.example.project_template.utils.response_messages.error_messages;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

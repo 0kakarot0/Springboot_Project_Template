@@ -2,6 +2,7 @@ package com.example.project_template.config;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -31,23 +32,21 @@ public class AppConfig {
     private String environment;
 
     // Load from application.properties OR .env
-    @Bean
     public String dbUrl() {
         return dotenv.get("DB_URL", Objects.requireNonNull(env.getProperty("DB_URL")));
     }
 
-    @Bean
     public String jwtSecret() {
         return dotenv.get("JWT_SECRET", env.getProperty("JWT_SECRET", "default_secret_key"));
     }
 
-    @Bean
     public String emailUsername() {
         return dotenv.get("EMAIL_USERNAME", Objects.requireNonNull(env.getProperty("EMAIL_USERNAME")));
     }
 
-    @Bean
     public String emailPassword() {
         return dotenv.get("EMAIL_PASSWORD", Objects.requireNonNull(env.getProperty("EMAIL_PASSWORD")));
     }
+
+
 }
